@@ -44,22 +44,6 @@ def missing_numbers(num_list):
         last_num = num
     return 0
 
-    '''
-    Try to refactor to look like this!!!!
-
-    def find_missing_number(sequence):
-    try:
-        seq = list(map(int, sequence.split()))
-        seq.sort()
-    except ValueError:
-        return 1
-    lastnum = 0
-    for num in seq:
-      if num != lastnum + 1:
-          return lastnum + 1
-      lastnum = num
-    return 0
-    '''
 
 print(missing_numbers('1 3 5 2 a'))
 print(missing_numbers('1 2 3 4 5'))
