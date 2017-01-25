@@ -15,12 +15,12 @@ def find_missing_letter(chars):
 
     newlist = []
 
-    for i in range (ord(chars[0]), ((ord(chars[0])+len(chars) + 1))):
+    for i in range(ord(chars[0]), ((ord(chars[0])+len(chars) + 1))):
         newlist.append(chr(i))
 
     newitem = list(set(newlist) - set(chars))
     print(', '.join(newitem))
-    return ''.join(newitem)
+    return ', '.join(newitem)
 
-find_missing_letter(['O','Q','R','S'])
-find_missing_letter(['a','b','d','f'])
+find_missing_letter(['O', 'Q', 'R', 'S'])
+find_missing_letter(['a', 'b', 'd', 'f'])
