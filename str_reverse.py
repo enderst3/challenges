@@ -9,3 +9,4 @@ def reverse(str):
     return str[::-1]
 
 reverse("dlrow olleh")
+reverse("god yzal eht revo depmuj xof nworb kciuq ehT")
