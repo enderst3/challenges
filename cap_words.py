@@ -22,4 +22,5 @@ def cap_words(string):
     print(" ".join(word.capitalize() for word in string.split()))
     return " ".join(word.capitalize() for word in string.split())
 
+cap_words("Luke I am your father")
 cap_words("I've got a fever for more cowbell")
