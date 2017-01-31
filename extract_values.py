@@ -16,9 +16,12 @@ def namelist(names):
         return ''
 
     elif len(names) == 1:
+        print(names[0])
         return names[0]
 
     print(', '.join(names[0:-1]) + ' & ' + names[-1])
     return ', '.join(names[0:-1]) + ' & ' + names[-1]
 
 namelist([{'name': 'Brett'}, {'name': 'Bart'}, {'name': 'Betty'}])
+namelist([{'name': 'Brett'}, {'name': 'Bart'}])
+namelist([{'name': 'Brett'}])
