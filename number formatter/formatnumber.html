@@ -1,19 +1,28 @@
-<head>
-</head>
-<body>
-    
-    <input type="text" id="txtNumber" pattern="[\d]+" placeholder="Type a number" required ><br>
-    <div id="formatted-number">
-    </div>
-    <style>
-        input:invalid {
-            border-color: red;
+<!-- Worked with Jay Magrath, this is his code -->
+
+
+<!doctype html>
+<html>
+
+    <head>
+
+    </head>
+    <body>
+
+        <input type="text" id="txtNumber" pattern="[\d]+" placeholder="Type a number" required ><br>
+        <div id="formatted-number">
+        </div>
+        <style>
+            input:invalid {
+                border-color: red;
+                }
+            input, input:valid {
+                border-color: #ccc;
             }
-        input, input:valid {
-            border-color: #ccc;
-        }
-    </style>
-<script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
-<script src="formatnumber.js"></script>
-</body>
+        </style>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script src="formatnumber.js"></script>
+    </body>
+
+</html>
