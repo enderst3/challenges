@@ -33,3 +33,13 @@ import random
                 return ['X', 'O']
             else:
                 return ['O', 'X']
+
+                
+def getBoardCopy(board):
+ 63.     # Make a duplicate of the board list and return it the duplicate.
+ 64.     dupeBoard = []
+ 65.
+ 66.     for i in board:
+ 67.         dupeBoard.append(i)
+ 68.
+ 69.     return dupeBoard
