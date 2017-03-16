@@ -85,9 +85,9 @@ def getBoardCopy(board):
                 if isWinner(copy, computerLetter):
                     return i
 
-112.     # Check if the player could win on their next move, and block them.
-113.     for i in range(1, 10):
-114.         copy = getBoardCopy(board)
+        # Check if the player could win on their next move, and block them.
+        for i in range(1, 10):
+            copy = getBoardCopy(board)
 115.         if isSpaceFree(copy, i):
 116.             makeMove(copy, playerLetter, i)
 117.             if isWinner(copy, playerLetter):
