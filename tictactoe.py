@@ -36,55 +36,55 @@ import random
 
 
 def getBoardCopy(board):
- 63.     # Make a duplicate of the board list and return it the duplicate.
- 64.     dupeBoard = []
- 65.
- 66.     for i in board:
- 67.         dupeBoard.append(i)
- 68.
- 69.     return dupeBoard
-70.
- 71. def isSpaceFree(board, move):
- 72.     # Return true if the passed move is free on the passed board.
- 73.     return board[move] == ' '
- 74.
- 75. def getPlayerMove(board):
- 76.     # Let the player type in their move.
- 77.     move = ' '
- 78.     while move not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(move)):
- 79.         print('What is your next move? (1-9)')
- 80.         move = input()
- 81.     return int(move)
- 82.
- 83. def chooseRandomMoveFromList(board, movesList):
- 84.     # Returns a valid move from the passed list on the passed board.
- 85.     # Returns None if there is no valid move.
- 86.     possibleMoves = []
- 87.     for i in movesList:
- 88.         if isSpaceFree(board, i):
- 89.             possibleMoves.append(i)
- 90.
- 91.     if len(possibleMoves) != 0:
- 92.         return random.choice(possibleMoves)
- 93.     else:
- 94.         return None
- 95.
- 96. def getComputerMove(board, computerLetter):
- 97.     # Given a board and the computer's letter, determine where to move and return that move.
- 98.     if computerLetter == 'X':
- 99.         playerLetter = 'O'
-100.     else:
-101.         playerLetter = 'X'
-102.
-103.     # Here is our algorithm for our Tic Tac Toe AI:
-104.     # First, check if we can win in the next move
-105.     for i in range(1, 10):
-106.         copy = getBoardCopy(board)
-107.         if isSpaceFree(copy, i):
-108.             makeMove(copy, computerLetter, i)
-109.             if isWinner(copy, computerLetter):
-110.                 return i
-111.
+    # Make a duplicate of the board list and return it the duplicate.
+    dupeBoard = []
+
+    for i in board:
+        dupeBoard.append(i)
+
+        return dupeBoard
+
+    def isSpaceFree(board, move):
+        # Return true if the passed move is free on the passed board.
+        return board[move] == ' '
+
+    def getPlayerMove(board):
+        # Let the player type in their move.
+        move = ' '
+        while move not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(move)):
+            print('What is your next move? (1-9)')
+            move = input()
+        return int(move)
+
+    def chooseRandomMoveFromList(board, movesList):
+        # Returns a valid move from the passed list on the passed board.
+        # Returns None if there is no valid move.
+        possibleMoves = []
+        for i in movesList:
+            if isSpaceFree(board, i):
+                possibleMoves.append(i)
+
+            if len(possibleMoves) != 0:
+                return random.choice(possibleMoves)
+            else:
+                return None
+
+    def getComputerMove(board, computerLetter):
+        # Given a board and the computer's letter, determine where to move and return that move.
+        if computerLetter == 'X':
+            playerLetter = 'O'
+        else:
+            playerLetter = 'X'
+
+        # Here is our algorithm for our Tic Tac Toe AI:
+        # First, check if we can win in the next move
+        for i in range(1, 10):
+            copy = getBoardCopy(board)
+            if isSpaceFree(copy, i):
+                makeMove(copy, computerLetter, i)
+                if isWinner(copy, computerLetter):
+                    return i
+
 112.     # Check if the player could win on their next move, and block them.
 113.     for i in range(1, 10):
 114.         copy = getBoardCopy(board)
