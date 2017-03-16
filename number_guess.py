@@ -16,7 +16,7 @@ user_name = input("Hello!  What is your name? ")
 number = random.randint(1, 20)
 print(user_name + ', I am thinking of a number between 1 and 20.')
 
-# while loop to take guesses, and return info on the guess.
+# while loop to take 6 guesses, and return info on the guess.
 while guesses_taken < 6:
     guess = input('Try to guess the number. ')
 
