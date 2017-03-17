@@ -35,6 +35,7 @@ while guesses_taken < 6:
     # breaks loop if number is guessed
     if guess == number:
         break
+
 # if number is guessed
 if guess == number:
     guesses_taken = str(guesses_taken)
