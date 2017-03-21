@@ -1,6 +1,7 @@
 body {
   font: 16px/1.5 Helvetica, Arial, Sans-Serif;
   padding: 0 1em;
+  background-color: darkslategray;
 }
 
 #result {
