@@ -11,7 +11,6 @@ body, html {
 	font-size:20px;
 	background-color:#fff;
 	padding:20px;
-	color:#333;
 	border-radius: 20px;
 	transition: 1s;
 }
@@ -51,6 +50,7 @@ section {
 	background-color: #8FB339;
 	border-radius: 20px;
 	transition: 1s;
+	color: #8FB339;
 }
 
 .btn-1Wrapper .btn:hover {
@@ -62,6 +62,7 @@ section {
 	background-color: #00A5CF;
 	border-radius: 20px;
 	transition: 1s;
+	color: #00A5CF;
 }
 
 .btn-2Wrapper .btn:hover {
@@ -75,6 +76,12 @@ section {
 	100% {
 		font-size:20px;
 	}
+}
+
+.btn-4Wrapper {
+	background-color: #EE6352;
+  color: #EE6352;
+	border-radius: 20px;
 }
 
 .btn-4Wrapper .btn:hover {
