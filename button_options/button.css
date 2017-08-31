@@ -31,7 +31,8 @@ h1 {
 	min-height:250px;
 	flex-direction:column;
 	background:#00A5CF;
-	border:solid 0.5px;
+	border-radius: 20px;
+	border: solid .5px;
 }
 
 section {
@@ -48,7 +49,6 @@ section {
 
 .btn-1Wrapper {
 	background-color: #8FB339;
-	border-radius: 20px;
 	transition: 1s;
 	color: #8FB339;
 }
@@ -60,7 +60,6 @@ section {
 
 .btn-2Wrapper {
 	background-color: #00A5CF;
-	border-radius: 20px;
 	transition: 1s;
 	color: #00A5CF;
 }
@@ -81,9 +80,29 @@ section {
 .btn-4Wrapper {
 	background-color: #EE6352;
   color: #EE6352;
-	border-radius: 20px;
 }
 
 .btn-4Wrapper .btn:hover {
     animation: bounce 1s;
+}
+
+@keyframes wobble {
+	25% {
+		transform:translateX(4px);
 	}
+
+	50% {
+		transform:translateX(-5px);
+	}
+	100% {
+		transform:translateX(0px);
+	}
+}
+.btn-5Wrapper {
+	background-color: #7DCFB6;
+  color: #7DCFB6;
+}
+
+.btn-5Wrapper .btn:hover {
+    animation: wobble .5s;
+}
