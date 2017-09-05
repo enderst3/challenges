@@ -121,3 +121,23 @@ section {
 	transform: translatey(4px);
 	box-shadow: 0px 3px 0px #888888;
 }
+
+.btn-6Wrapper {
+	background-color: #3F88C5;
+	color: #3F88C5;
+}
+
+.btn-6Wrapper .btn {
+	box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, .7),
+		inset 0px 6px 1px 1px white,
+		inset 0px -6px 1px 1px rgba(204, 198, 197, 0.5);
+	transition: .3s;
+
+}
+
+.btn-6Wrapper .btn:active {
+	box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, .9),
+		inset 0px 6px 1px 1px white,
+		inset 0px -6px 1px 1px rgba(204, 198, 197, 0.5);
+	transition: .3s;
+}
