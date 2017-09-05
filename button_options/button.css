@@ -141,3 +141,14 @@ section {
 		inset 0px -6px 1px 1px rgba(204, 198, 197, 0.5);
 	transition: .3s;
 }
+
+.btn-7Wrapper .btn{
+	transition: .6s;
+	border-radius: 0;
+}
+
+.btn-7Wrapper .btn:hover{
+	box-shadow:
+		15px -15px rgba(0, 0, 0, .4);
+		transform: translatex(-5px) translatey(5px);
+}
