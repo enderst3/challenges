@@ -28,10 +28,9 @@ h1 {
 	display:flex;
 	align-items:center;
 	justify-content:center;
-	min-height:150px;
+	min-height:125px;
 	flex-direction:column;
 	background:#00A5CF;
-	border-radius: 20px;
 	border: solid .5px;
 }
 
@@ -132,7 +131,6 @@ section {
 		inset 0px 6px 1px 1px white,
 		inset 0px -6px 1px 1px rgba(204, 198, 197, 0.5);
 	transition: .3s;
-
 }
 
 .btn-6Wrapper .btn:active {
@@ -140,6 +138,11 @@ section {
 		inset 0px 6px 1px 1px white,
 		inset 0px -6px 1px 1px rgba(204, 198, 197, 0.5);
 	transition: .3s;
+}
+
+.btn-7Wrapper {
+	background-color: #673AB7;
+	color: #673AB7;
 }
 
 .btn-7Wrapper .btn{
