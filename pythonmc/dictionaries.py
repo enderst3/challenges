@@ -104,4 +104,7 @@ print('=' * 50)
 for fruit in fruit_tuple:
     item, description = fruit
     print(item + ' - ' + description)
-    
+
+ print('=' * 50)
+
+ 
