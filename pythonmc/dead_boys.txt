@@ -1,0 +1,1 @@
+('Young Loud and Snotty', 'The Dead Boys', 1979, ((1, 'Sonic Reducer'), (2, 'All This and More'), (3, 'What is Love'), (4, 'Not Anymore')))
