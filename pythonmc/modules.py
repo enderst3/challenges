@@ -17,8 +17,8 @@ print('Day: ', time_here[2], time_here.tm_mday)
 
 print('=' * 70)
 
-# little timer
-from time import time as my_timer
+# reaction timer game
+from time import perf_counter as my_timer
 import random
 
 input("Press enter to start ")
@@ -30,7 +30,7 @@ input('Press enter to stop ')
 
 end_time = my_timer()
 
-print('Started at ' + time.strftime('%X', time.localtime(start_time)))
+print('Started at ' + time.strftime('%X', time.localtime(start_time)))# strftime makes more readable string form
 print('Ended at ' + time.strftime('%X', time.localtime(end_time)))
 
 print('Your reaction time was {} seconds'.format(end_time - start_time))
