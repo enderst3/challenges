@@ -49,5 +49,5 @@ menu.append(['spam', 'egg', 'sausage', 'spam'])
 for meal in menu:
     if not 'spam' in meal:
         print(meal)# prints list
-        for item in meal: 
+        for item in meal:
             print(item)# prints items in list
