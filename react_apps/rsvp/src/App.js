@@ -18,11 +18,6 @@ class App extends Component {
         name: 'Nic',
         isConfirmed: true,
         isEditing: false
-      },
-      {
-        name: 'Johnny',
-        isConfirmed: true,
-        isEditing: true
       }
     ]
   }
