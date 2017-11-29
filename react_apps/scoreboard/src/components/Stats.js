@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
-function Stats(props) {
+const Stats = props => {
   const playerCount = props.players.length;
   const totalPoints = props.players.reduce(function(total, player) {
     return total + player.score;
@@ -23,5 +23,7 @@ function Stats(props) {
 }
 
 Stats.propTypes = {
-  players: React.PropTypes.array.isRequired,
+  players: PropTypes.array.isRequired,
 };
+
+export default Stats;
