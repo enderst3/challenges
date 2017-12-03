@@ -7,7 +7,8 @@ import Scoreboard from './src/containers/Scoreboard';
 
 
 const store = createStore(
-  PlayerReducer
+  PlayerReducer,
+  window.devToolsExtention && window.devToolsExtention()
 );
 
 render(
