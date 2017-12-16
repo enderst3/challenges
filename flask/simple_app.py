@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import render_template
 
 
 '''
@@ -14,7 +15,7 @@ view function will show on page.  route is decorator.
 @app.route('/')
 @app.route('/<name>')# tells flask to capture whats after the forward slash as name
 def index(name='Todd'):
-    return 'Hello from {}'.format(name)
+    return render_template('index.html', name=name)
 
 
 '''
@@ -26,8 +27,12 @@ they will still go to the same view
 @app.route('/add/<int:num1>/<float:num2>')
 @app.route('/add/<float:num1>/<int:num2>')
 def add(num1, num2):
-    return '{} + {} = {}'.format(num1, num2, num1+num2)
-
+    context = {'num1':num1, 'num2':num2}
+    return render_template('add.html', **context)
+    
+    # could also do
+    # return render_template('add.html', num1=num1, num2=num2)
+    
 
 '''
 debug will keep relaoding the page on save
