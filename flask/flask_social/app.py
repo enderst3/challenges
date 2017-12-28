@@ -1,6 +1,9 @@
-from flask import Flask, g
-from flask.ext.login import LoginManager
+from flask import (Flask, g, render_template, flash, redirect, url_for)
+from flask.ext.bcrypt import check_password_hash
+from flask.ext.login import (LoginManager, login_user, 
+                            logout_user, login_required)
 
+import forms
 import models
 
 DEBUG = True
@@ -12,7 +15,7 @@ app.secret_key = "l;kajdsofiupoasnkdf;nasdopywerwe;laksdj;fyopasydfasdf"
 
 login_manager = LoginManager()
 login_manager.init_app(app)
-login_manger.login_view = 'login'
+login_manager.login_view = 'login'
 
 @login_manager.user_loader
 def load_user(userid):
@@ -33,16 +36,59 @@ def after_request(response):
     g.db.close()
     return response
 
+@app.route('/registration', methods=('GET', 'POST'))
+def registration():
+    form = forms.RegistrationForm()
+    if form.validate_on_submit():
+        flash('You are registered!', 'success')
+        models.User.create_user(
+            username=form.username.data,
+            email=form.email.data,
+            password=form.password.data
+        )
+        return redirect(url_for('index'))
+    return render_template('registration.html', form=form)
 
 
+@app.route('/login', methods=('GET', 'POST'))
+def login():
+    form = forms.LoginForm()
+    if form.validate_on_submit():
+        try:
+            user = models.User.get(models.User.email == form.email.data)
+        except models.DoesNotExist:
+            flash("Your email or password does not match!", 'error')
+        else:
+            if check_password_hash(user.password, form.password.data):
+                login_user(user)
+                flash('You are now logged in!', 'success')
+                return redirect(url_for('index'))
+            else:
+                flash("Your email or password does not match!", 'error')
+    return render_template('login.html', form=form)
 
 
-if __name___ == '__main__':
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash("You've been logged out!  Come back soon!", 'success')
+    return redirect(url_for('index'))
+
+
+@app.route('/')
+def index():
+    return 'Hello!'
+
+if __name__ == '__main__':
     models.initialize()
-    models.User.create_user(
-        name='Johnny',
-        email='johnny@gmail.com',
-        password='password',
-        admin=True
-    )
-    app.run(debug=DEBUG, hose=HOST, port=PORT)
+    try:
+        models.User.create_user(
+            username='Johnny',
+            email='johnny@gmail.com',
+            password='password',
+            admin=True
+        )
+    except ValueError:
+        pass
+    app.run(debug=DEBUG, host=HOST, port=PORT)
