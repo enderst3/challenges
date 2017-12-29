@@ -1,22 +1,10 @@
-
 {% macro render_field(field) %}
-  <div class='field'>
-    {% if field.errors %}
-      {% for error in field.errors %}
-        <div class='notification error'>{{ error }}</div>
-      {% endfor %}
-    {% endif %}
-    {{ field(placeholder=field.label.text) }}
-  </div>
+    <div class="field">
+        {% if field.errors %}
+            {% for error in field.errors %}
+                <div class="notification error">{{ error }}</div>
+            {% endfor %}
+        {% endif %}
+        {{ field(placeholder=field.label.text) }}
+    </div>
 {% endmacro %}
-
-<!-- {%- macro hide_email(user) -%}
-  {#- Get the first letter of the email -#}
-  {{user.email[0]}}
-  {#- Get all the letters after the first, but before the @ -#}
-  {%- for letter in user.email.split('@')[0][1:] -%}
-    {{'*'}}
-  {%- endfor -%}
-  {#- Append the rest of the email on -#}
-  {{ '@' + user.email.split('@')[1] }}
-{%- endmacro -%} -->
