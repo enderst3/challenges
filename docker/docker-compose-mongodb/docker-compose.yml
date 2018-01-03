@@ -1,0 +1,16 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ~/Documents/challenges/docker/docker-compose-mongodb:/counter_app
+    links:
+      - db:mongodb
+    container_name: counterapp_web_3
+    depends_on:
+      - db
+  db:
+    image: mongo:3.0.2
+    container_name: counterapp_db_3
