@@ -42,12 +42,13 @@ def stringcases(string):
 # Output:
 # [(1, 'a'), (2, 'b'), (3, 'c')]
 
-def combo(iter1, iter2):
-    combo_list = []
-    for index, value in enumerate(iter1):
-        tuple = value, iter2[index]
-        combo_list.append(tuple)
-    return combo_list
+# def combo(iter1, iter2):
+#     combo_list = []
+#     for index, value in enumerate(iter1):
+#         tuple = value, iter2[index]
+#         combo_list.append(tuple)
+#     return combo_list
+
 
 def combo(iter1, iter2):
     return list(zip(iter1, iter2))
