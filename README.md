@@ -1,0 +1,1 @@
+This folder is a collection of code challenges, and small projects I have worked on.
