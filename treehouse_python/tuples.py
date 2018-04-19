@@ -3,7 +3,7 @@
 a = 5
 b = 20
 
-a, b =b, a
+a, b = b, a
 
 def add(*nums):
     total = 0
