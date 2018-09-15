@@ -24,3 +24,23 @@ def delete_digit(n):
       if number > high_number:
           high_number = number
   return high_number
+
+
+#  Using a list to store numbers
+
+def delete_digit(n):
+    n = str(n)
+    numbers = []
+    for i in range(len(n)):
+        temp_list = list(n)
+        # print(temp_list[i])
+        del temp_list[i]
+        # print(temp_list)
+        numbers.append(int("".join(temp_list)))
+    # print(max(numbers))
+    return max(numbers) 
+
+delete_digit(152)
+delete_digit(1001)
+delete_digit(10)
+delete_digit(1367)
