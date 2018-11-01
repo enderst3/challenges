@@ -40,8 +40,24 @@ def first_move():
     else:
         return 'player'
 
-def moves(board, letter, move):
+def player_moves(board, letter, move):
     board[move] = letter
 
+def is_winner(bo, le):
+    # Given a board and a player's letter, this function returns True if that player has won.
+    # We use "bo" instead of "board" and "le" instead of "letter" so wedon't have to type as much.
+    return ((bo[7] == le and bo[8] == le and bo[9] == le) or # Across the top
+        (bo[4] == le and bo[5] == le and bo[6] == le) or # Across the middle
+        (bo[1] == le and bo[2] == le and bo[3] == le) or # Across the bottom
+        (bo[7] == le and bo[4] == le and bo[1] == le) or # Down the left side
+        (bo[8] == le and bo[5] == le and bo[2] == le) or # Down the middle
+        (bo[9] == le and bo[6] == le and bo[3] == le) or # Down the right side
+        (bo[7] == le and bo[5] == le and bo[3] == le) or # Diagonal
+        (bo[9] == le and bo[5] == le and bo[1] == le)) # Diagonal
 
-
+def get_board_copy(board):
+    # make a copy of the board list and return it.
+    board_copy = []
+    for i in board:
+        board_copy.append(i)
+    return board_copy
