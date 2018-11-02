@@ -61,3 +61,23 @@ def get_board_copy(board):
     for i in board:
         board_copy.append(i)
     return board_copy
+
+def is_space_open(board, move):
+    # Return True if the players space is open on the board
+    return board[move] == ' '
+
+def get_player_move():
+    # Lets player enter move
+    move = ''
+    while move not in '1 2 3 4 5 6 7 8 9'.split() or not is_space_open(board, int(move)):
+        print("What is your next move? (1-9) ")
+        move = input()
+    return int(move)
+
+def choose_random_ move(board, moves_list):
+    #Returns fal move from the passed list on the passed board.
+    #Returns None if not valid moves.
+    possible_moves = []
+    for i in moves_list:
+        if is_space_open(board, i):
+            possible_moves.append(i)
