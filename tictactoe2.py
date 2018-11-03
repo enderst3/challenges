@@ -81,3 +81,10 @@ def choose_random_ move(board, moves_list):
     for i in moves_list:
         if is_space_open(board, i):
             possible_moves.append(i)
+    
+    if len(possible_moves) !=0:
+        return random.choice(possible_moves)
+    else:
+        return None
+    
+
