@@ -40,7 +40,7 @@ def first_move():
     else:
         return 'player'
 
-def player_moves(board, letter, move):
+def make_move(board, letter, move):
     board[move] = letter
 
 def is_winner(bo, le):
@@ -74,7 +74,7 @@ def get_player_move():
         move = input()
     return int(move)
 
-def choose_random_ move(board, moves_list):
+def choose_random_move(board, moves_list):
     #Returns fal move from the passed list on the passed board.
     #Returns None if not valid moves.
     possible_moves = []
@@ -87,4 +87,40 @@ def choose_random_ move(board, moves_list):
     else:
         return None
     
+def get_computer_move(board, computer_letter):
+    # fived and board and the computer's leter, determine move, and return.
+    if computer_letter == 'X':
+        player_letter = 'O'
+    else:
+        player_letter = 'X'
+
+    # AI Algorithm for game
+    # first check if we can win in the next move.
+    for i in range(1, 10):
+        board_copy = get_board_copy(board)
+        if is_space_open(board_copy, i):
+            make_move(board_copy, computer_letter)
+            if is_winner(board_copy, computer_letter):
+                return i
+
+    # move to corner if they are free
+    move = choose_random_move(board, [2, 4, 7, 9])
+    if move != None:
+        return move
+
+    # take center if free
+    if is_space_open(board, 5):
+        return 5
+    
+    # move to one of the sides
+    return choose_random_move(board, [2, 4, 6, 8])
+
+def is_board_full(board):
+    # retrun True if every space on the board is taken, else return false
+    for i in range(1, 10):
+        if is_space_open(board, i):
+            return False
+    return True
+
+print('Welcome to Tic-Tac-Toe!')
 
