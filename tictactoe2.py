@@ -47,13 +47,13 @@ def is_winner(bo, le):
     # Given a board and a player's letter, this function returns True if that player has won.
     # We use "bo" instead of "board" and "le" instead of "letter" so wedon't have to type as much.
     return ((bo[7] == le and bo[8] == le and bo[9] == le) or # Across the top
-        (bo[4] == le and bo[5] == le and bo[6] == le) or # Across the middle
-        (bo[1] == le and bo[2] == le and bo[3] == le) or # Across the bottom
-        (bo[7] == le and bo[4] == le and bo[1] == le) or # Down the left side
-        (bo[8] == le and bo[5] == le and bo[2] == le) or # Down the middle
-        (bo[9] == le and bo[6] == le and bo[3] == le) or # Down the right side
-        (bo[7] == le and bo[5] == le and bo[3] == le) or # Diagonal
-        (bo[9] == le and bo[5] == le and bo[1] == le)) # Diagonal
+    (bo[4] == le and bo[5] == le and bo[6] == le) or # Across the middle
+    (bo[1] == le and bo[2] == le and bo[3] == le) or # Across the bottom
+    (bo[7] == le and bo[4] == le and bo[1] == le) or # Down the left side
+    (bo[8] == le and bo[5] == le and bo[2] == le) or # Down the middle
+    (bo[9] == le and bo[6] == le and bo[3] == le) or # Down the right side
+    (bo[7] == le and bo[5] == le and bo[3] == le) or # Diagonal
+    (bo[9] == le and bo[5] == le and bo[1] == le)) # Diagonal
 
 def get_board_copy(board):
     # make a copy of the board list and return it.
@@ -66,7 +66,7 @@ def is_space_open(board, move):
     # Return True if the players space is open on the board
     return board[move] == ' '
 
-def get_player_move():
+def get_player_move(board):
     # Lets player enter move
     move = ''
     while move not in '1 2 3 4 5 6 7 8 9'.split() or not is_space_open(board, int(move)):
