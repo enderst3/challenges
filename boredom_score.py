@@ -39,9 +39,9 @@ def boredom(staff):
         "cleaning": 4,
         "pissing about": 25
     }
-    n = sum(score[i] for i in staff.values())
-    if n <= 80:
+    total = sum(score[i] for i in staff.values())
+    if total <= 80:
         return "kill me now"
-    if n < 100:
+    if total < 100:
         return "i can handle this"
     return "party time!!"
