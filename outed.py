@@ -25,7 +25,10 @@ def outed(meet, boss):
         else:
             total += v
     result = total / len(meet.items())
-    return 'Get Out Now!' if result <= 5 else 'Nice Work Champ!'
+    if result <= 5:
+        return 'Get Out Now!'  
+    else:
+        return 'Nice Work Champ!'
 
 def outed(meet, boss):
     return 'Get Out Now!' if (sum(meet.values()) + meet[boss] ) / len(meet) <= 5 else 'Nice Work Champ!'  
