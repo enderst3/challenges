@@ -33,8 +33,13 @@ def bald(s):
         type = 'Homer!'
     if len(hairs) == 1:
         type = 'Unicorn!'
-    else:
-        "Clean!"
-    hair_cut = s.replace('/', '-')
-    print(hair_cut, type)
-    return [hair_cut, type]
+    if hairs == []:
+        type = "Clean!"
+    print(s.replace('/', '-'), type)
+    return [s.replace('/', '-'), type]
+
+
+def bald(s):
+    score = s.count('/')
+    h = ['Clean!', 'Unicorn!', 'Homer!', 'Careless!', 'Hobo!']
+    return [s.replace('/', '-'), h[(score > 0) + (score > 1) + (score > 2) + (score > 5)]]
