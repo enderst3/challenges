@@ -21,3 +21,17 @@ With floats it can happen that results depends on the operations order. To calcu
 
 (3600 * delta_distance) / s.
 """
+
+def gps(s, list_nums):
+
+  if len(list_nums) <= 1:
+    return 0    
+  else:
+    # Returns a list of tuples, where each tuple contains the i-th element from each of the argument sequences
+    sections = [round(y-x, 3) for x,y in zip(list_nums[:-1],list_nums[1:])]
+    # Returns the hourly speed ((3600 * delta_distance) / s)
+    hrly_speeds = [3600*section // s for section in sections]
+    # Returns the max average speed as a float 
+    max_avg_speeds = max(hrly_speeds)
+    # Returns the max average speed as an integer
+    return int(max_avg_speeds) 
