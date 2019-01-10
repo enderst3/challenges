@@ -19,3 +19,12 @@ Calling this function max_rot (or maxRot or ... depending on the language)
 max_rot(56789) should return 68957
 """
 
+def max_rot(n):
+    maxn = n
+    n = str(n)
+    
+    for i in range(len(n) - 2):
+        n = n[0:i] + n[i+1:] + n[i]
+        if int(n) > maxn: maxn = int(n)
+    
+    return maxn
