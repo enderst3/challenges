@@ -20,11 +20,14 @@ max_rot(56789) should return 68957
 """
 
 def max_rot(n):
-    maxn = n
-    n = str(n)
-    
-    for i in range(len(n) - 2):
-        n = n[0:i] + n[i+1:] + n[i]
-        if int(n) > maxn: maxn = int(n)
-    
-    return maxn
+    print(n)
+    max_list = [n] # makes a list
+    n = str(n) # makes n a string
+    n = n[1:len(n)] + n[0] # puts the last digit first
+    print(n)
+    max_list.append(int(n)) # appends list
+    for i in range(len(n)-1): # for loop
+        n = n[:i+1] + n[i+2:len(n)] + n[i+1] # rotates through digits
+        max_list.append(int(n)) # appends list
+                        
+    return max(max_list) #returns max
