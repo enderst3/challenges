@@ -29,3 +29,8 @@ Since the size (k) equal 3 , then the subsequence of size 2 whose gives product 
 
 '''
 
+def max_product(lst, n_largest_elements):
+    total = 1
+    for x in sorted(lst,reverse=True)[0:n_largest_elements]:
+        total *= x  
+    return total
