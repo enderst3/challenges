@@ -117,3 +117,30 @@ list = [[0]*cols]*rows
 # check if list[0] and list[1] refer to the same object
 # Prints True becaus ether eis only one list boject being created
 print(list[0] is list[1])
+
+print('='*20)
+'''
+here's the program that creates a numerical table with two rows and three columns, 
+and then makes some manipulations with it:
+'''
+a = [[1, 2, 3], [4, 5, 6]]
+print(a[0])
+print(a[1])
+b = a[0]
+print(b)
+print(a[0][2])
+a[0][1] = 7
+print(a)
+print(b)
+b[2] = 9
+print(a[0])
+print(b)
+'''
+The first element of a here — a[0] — is a list of numbers [1, 2, 3]. 
+The first element of this new list is a[0][0] == 1; moreover, a[0][1] == 2, a[0][2] == 3, 
+a[1][0] == 4, a[1][1] == 5, a[1][2] == 6.
+
+
+'''
+
+print('='*20)
