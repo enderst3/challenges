@@ -144,3 +144,33 @@ a[1][0] == 4, a[1][1] == 5, a[1][2] == 6.
 '''
 
 print('='*20)
+
+'''
+To process 2-dimensional array, you typically use nested loops. The first loop iterates through 
+the row number, the second loop runs through the elements inside of a row. 
+For example, that's how you display two-dimensional numerical list on the screen line by line, 
+separating the numbers with spaces:
+'''
+
+a = [[1, 2, 3, 4], [5, 6], [7, 8, 9]]
+for i in range(len(a)):
+    for j in range(len(a[i])):
+        print(a[i][j], end=' ')
+    print()
+
+print('='*20)
+
+'''
+We have already tried to explain that a for-loop variable in Python can iterate not only over a range(), 
+but generally over all the elements of any sequence. Sequences in Python are lists and strings 
+(and some other objects that we haven't met yet). Look how you can print a two-dimensional array, 
+using this handy feature of loop for:
+
+'''
+a = [[1, 2, 3, 4], [5, 6], [7, 8, 9]]
+for row in a:
+    for elem in row:
+        print(elem, end=' ')
+    print()
+
+print('='*20)
